@@ -1,0 +1,1095 @@
+# PROMPT PEMBUATAN WEBSITE SISTEM MONITORING KEDISIPLINAN DAN AKTIVITAS SANTRI BERBASIS WEB
+
+## 1. PERAN DAN TUJUAN PROYEK
+
+Bertindaklah sebagai Senior Full-Stack Developer, UI/UX Designer, Database Engineer, dan System Analyst profesional.
+
+Saya ingin membuat aplikasi web bernama **Sistem Monitoring Kedisiplinan dan Aktivitas Santri Berbasis Web**.
+
+ada halaman pertama yaitu halaman profil pondok pesantren modern An-Nawawi dan ada tulisan penjelasan singkat mengenai annawawi ,  visi : “Terwujudnya Generasi Islam Terbaik yang Soleh Berilmu dan Berjiwa Patriotik.” dan misi : 1. Menyelenggarakan Pendidikan yang Mengacu pada nilai nilai Islam, Perkembangan Dunia Pendidikan, Ilmu Pengetahuan dan Teknologi
+2. Membina Santri Berakhlaq Al Quram dan As-sunah.
+3. Menciptakan Lingkungan Sekolah Sebagai Sarana Belajar yang Produktif.
+
+nama pondok pesantren nya Pondok Pesantren Modern An-Nawawi dan buatkan akun langsung admin dengan username admin, user ustadz : hanif hidayatullah, user orang tua : ahmad. dan buatkan juga absensi perkelas nya dan langsung isi nama nama absensinya kelas nya itu ada 7A dan 7B untuk banat 7C dan 7D untuk banin dan di user admin bisa menambahkan kelasnya dan ini kondisional.
+
+Website ini digunakan untuk memudahkan pondok pesantren dalam memantau, mencatat, mengelola, dan melaporkan perkembangan aktivitas serta kedisiplinan santri sehari-hari.
+
+Sistem juga memungkinkan orang tua atau wali santri untuk memantau perkembangan anak mereka dari mana saja melalui akun masing-masing.
+
+Website harus benar-benar fungsional, bukan hanya tampilan prototype. Semua data harus terhubung dengan database dan dapat diperbarui sesuai hak akses pengguna.
+
+Tujuan utama sistem:
+
+1. Mempermudah pencatatan aktivitas keseharian santri.
+2. Memantau kedisiplinan dan kehadiran santri.
+3. Mencatat perkembangan hafalan Al-Qur'an atau tahfidz.
+4. Mencatat pelanggaran dan pembinaan santri.
+5. Menampilkan dokumentasi kegiatan santri dalam bentuk foto.
+6. Menyampaikan pengumuman kepada santri dan orang tua/wali.
+7. Memantau kegiatan ekstrakurikuler santri.
+8. Memberikan akses kepada orang tua/wali untuk melihat perkembangan anak secara transparan.
+9. Memusatkan seluruh data monitoring santri dalam satu sistem.
+
+## 2. TEKNOLOGI YANG DIGUNAKAN
+
+Gunakan teknologi berikut:
+
+- Frontend: React + TypeScript.
+- Build tool: Vite.
+- Styling: Tailwind CSS.
+- UI Components: shadcn/ui.
+- Icons: Lucide React.
+- Routing: React Router.
+- Backend dan database: Supabase PostgreSQL.
+- Authentication: Supabase Auth.
+- Penyimpanan gambar: Supabase Storage.
+- Grafik statistik: Recharts.
+- Hosting: Vercel.
+- Version Control: GitHub.
+
+Pastikan seluruh teknologi terintegrasi dan aplikasi siap di-deploy ke Vercel.
+
+## 3. DESAIN UI/UX WEBSITE
+
+Buat desain website yang modern, profesional, elegan, bersih, dan mudah digunakan.
+
+Website harus memiliki tampilan seperti aplikasi dashboard SaaS profesional.
+
+### Identitas visual
+
+- Nama aplikasi: Monitoring Santri.
+- Warna utama: hijau tua atau emerald.
+- Warna pendukung: putih, abu-abu muda, dan sedikit warna emas.
+- Gunakan tipografi modern dan mudah dibaca.
+- Gunakan card dengan sudut membulat.
+- Gunakan sidebar dashboard yang rapi.
+- Gunakan ikon Lucide yang konsisten.
+- Gunakan animasi ringan pada tombol dan transisi halaman.
+- Gunakan grafik yang informatif.
+- Hindari tampilan yang terlalu ramai.
+- Buat desain responsif untuk desktop, laptop, tablet, dan smartphone.
+
+Gunakan Bahasa Indonesia untuk seluruh navigasi, tombol, form, notifikasi, dan informasi.
+
+## 4. HAK AKSES DAN ROLE PENGGUNA
+
+Sistem hanya memiliki tiga role utama.
+
+### A. ADMIN
+
+Admin merupakan pengelola utama sistem yang memiliki akses penuh untuk mengatur data dan pengguna.
+
+Hak akses admin:
+
+- Melihat dashboard keseluruhan pondok.
+- Menambah, mengedit, melihat, dan menghapus data santri sesuai kebijakan.
+- Mengelola akun ustadz/ustadzah.
+- Mengelola akun orang tua/wali.
+- Mengelola data kelas atau kelompok santri.
+- Mengelola data tahfidz.
+- Mengelola data absensi.
+- Mengelola data pelanggaran.
+- Mengelola dokumentasi foto kegiatan.
+- Mengelola pengumuman.
+- Mengelola data ekstrakurikuler.
+- Melihat seluruh laporan.
+- Mengelola profil dan pengaturan sistem.
+
+Admin dapat mengatur akun dan hak akses pengguna lainnya.
+
+### B. USTADZ/USTADZAH
+
+Ustadz/ustadzah bertugas mengelola dan memperbarui aktivitas keseharian santri.
+
+Hak akses ustadz/ustadzah:
+
+- Login ke dashboard ustadz/ustadzah.
+- Melihat daftar santri yang menjadi tanggung jawabnya.
+- Melihat data santri.
+- Menginput dan memperbarui data tahfidz.
+- Menginput dan memperbarui data absensi.
+- Menginput data pelanggaran.
+- Memperbarui catatan pembinaan santri.
+- Mengunggah foto kegiatan keseharian santri.
+- Membuat dan memperbarui pengumuman jika diberikan izin admin.
+- Mengelola data kegiatan ekstrakurikuler jika diberikan izin admin.
+- Melihat riwayat data yang pernah diinput.
+
+Ustadz/ustadzah hanya boleh mengelola data sesuai tanggung jawab dan izin yang diberikan oleh admin.
+
+### C. USER (ORANG TUA/WALI SANTRI)
+
+User merupakan akun khusus orang tua atau wali santri.
+
+Hak akses user:
+
+- Login ke dashboard orang tua/wali.
+- Melihat profil anak.
+- Melihat data tahfidz.
+- Melihat data absensi.
+- Melihat data pelanggaran.
+- Melihat catatan pembinaan.
+- Melihat foto kegiatan keseharian santri di pondok.
+- Melihat pengumuman.
+- Melihat kegiatan ekstrakurikuler.
+- Melihat riwayat perkembangan anak.
+- Melihat laporan perkembangan santri.
+
+**ATURAN PALING PENTING:**
+
+Akun orang tua/wali hanya memiliki hak akses melihat data (READ ONLY).
+
+Akun user tidak boleh:
+
+- Menambah data.
+- Mengedit data.
+- Menghapus data.
+- Menginput absensi.
+- Mengubah data tahfidz.
+- Menginput pelanggaran.
+- Mengunggah foto kegiatan.
+- Mengubah pengumuman.
+- Mengubah data ekstrakurikuler.
+- Mengakses halaman admin atau ustadz/ustadzah.
+
+Semua data yang ditampilkan kepada orang tua/wali hanya dapat diperbarui oleh admin atau ustadz/ustadzah sesuai kewenangannya.
+
+Buat pembatasan hak akses ini pada frontend sekaligus database/backend. Jangan hanya menyembunyikan tombol edit.
+
+## 5. HALAMAN LOGIN
+
+Buat halaman login yang profesional dengan identitas visual pondok pesantren.
+
+Sediakan tiga jenis akun:
+
+1. Login Admin.
+2. Login Ustadz/Ustadzah.
+3. Login Orang Tua/Wali.
+
+Masing-masing dapat memiliki halaman login tersendiri atau satu halaman login dengan pemilihan jenis akun.
+
+Field login:
+
+- Email atau username.
+- Password.
+- Tombol tampilkan/sembunyikan password.
+- Tombol masuk.
+- Fitur lupa password jika didukung.
+
+Setelah login berhasil:
+
+- Admin diarahkan ke Dashboard Admin.
+- Ustadz/Ustadzah diarahkan ke Dashboard Ustadz/Ustadzah.
+- Orang Tua/Wali diarahkan ke Dashboard User.
+
+Pastikan pengguna tidak dapat masuk ke dashboard role lain dengan mengubah URL secara manual.
+
+Akun admin pertama dibuat melalui proses setup yang aman. Akun ustadz/ustadzah dan orang tua/wali dikelola melalui admin.
+
+## 6. DASHBOARD ADMIN
+
+Buat dashboard admin sebagai pusat pengelolaan seluruh sistem.
+
+### Statistik utama
+
+Tampilkan informasi:
+
+- Total santri.
+- Total ustadz/ustadzah.
+- Total orang tua/wali.
+- Total santri hadir hari ini.
+- Total santri tidak hadir.
+- Total pelanggaran.
+- Total setoran tahfidz.
+- Total kegiatan ekstrakurikuler.
+
+Semua angka harus diambil dari database secara dinamis.
+
+### Grafik dashboard
+
+Buat visualisasi:
+
+- Grafik kehadiran santri.
+- Grafik perkembangan tahfidz.
+- Grafik jumlah pelanggaran.
+- Grafik aktivitas santri berdasarkan periode.
+- Statistik kegiatan ekstrakurikuler.
+
+### Aktivitas terbaru
+
+Tampilkan daftar aktivitas terbaru, seperti:
+
+- Santri melakukan setoran hafalan.
+- Ustadz menginput absensi.
+- Catatan pelanggaran baru.
+- Foto kegiatan baru.
+- Pengumuman terbaru.
+
+### Menu sidebar admin
+
+1. Dashboard.
+2. Data Santri.
+3. Data Ustadz/Ustadzah.
+4. Data Orang Tua/Wali.
+5. Data Tahfidz.
+6. Data Absensi.
+7. Data Pelanggaran.
+8. Dokumentasi Kegiatan.
+9. Pengumuman.
+10. Ekstrakurikuler.
+11. Laporan.
+12. Pengaturan.
+
+## 7. DASHBOARD USTADZ/USTADZAH
+
+Buat dashboard khusus untuk ustadz/ustadzah dengan tampilan sederhana dan mudah digunakan.
+
+### Ringkasan dashboard
+
+Tampilkan:
+
+- Jumlah santri yang menjadi tanggung jawab.
+- Jumlah santri hadir hari ini.
+- Jumlah santri tidak hadir.
+- Jumlah setoran tahfidz hari ini.
+- Jumlah pelanggaran yang dicatat.
+- Jumlah dokumentasi kegiatan.
+
+### Menu sidebar ustadz/ustadzah
+
+1. Dashboard.
+2. Data Santri.
+3. Input Tahfidz.
+4. Input Absensi.
+5. Input Pelanggaran.
+6. Catatan Pembinaan.
+7. Dokumentasi Kegiatan.
+8. Pengumuman (jika diizinkan).
+9. Ekstrakurikuler (jika diizinkan).
+10. Riwayat Input.
+11. Profil.
+
+Setiap form harus mudah digunakan, memiliki validasi, dan menampilkan notifikasi ketika data berhasil disimpan.
+
+## 8. DASHBOARD ORANG TUA/WALI
+
+Buat dashboard khusus orang tua/wali yang sederhana, informatif, dan mudah dipahami.
+
+Dashboard ini harus berfokus pada informasi perkembangan anak.
+
+### Bagian profil anak
+
+Tampilkan:
+
+- Foto santri.
+- Nama lengkap.
+- NIS atau nomor induk santri.
+- Kelas.
+- Asrama.
+- Nama wali kelas atau ustadz pembimbing jika tersedia.
+- Status santri.
+
+Jika satu akun orang tua memiliki lebih dari satu anak, sediakan pilihan untuk melihat masing-masing anak.
+
+### Statistik perkembangan
+
+Tampilkan:
+
+- Total setoran tahfidz.
+- Ringkasan kehadiran.
+- Total catatan pelanggaran.
+- Jumlah kegiatan ekstrakurikuler yang diikuti.
+
+### Aktivitas terbaru
+
+Tampilkan timeline aktivitas anak, seperti:
+
+- Setoran hafalan terbaru.
+- Kehadiran hari ini.
+- Catatan pembinaan.
+- Kegiatan pondok terbaru.
+- Dokumentasi foto kegiatan.
+
+### Menu sidebar user
+
+1. Dashboard.
+2. Profil Anak.
+3. Data Tahfidz.
+4. Data Absensi.
+5. Data Pelanggaran.
+6. Dokumentasi Kegiatan.
+7. Pengumuman.
+8. Ekstrakurikuler.
+9. Riwayat Aktivitas.
+10. Profil Akun.
+11. Keluar.
+
+Semua halaman pada dashboard orang tua/wali hanya boleh menampilkan data. Jangan tampilkan tombol tambah, edit, hapus, atau input.
+
+## 9. DATA SANTRI
+
+Buat halaman manajemen data santri.
+
+Informasi santri:
+
+- Foto santri.
+- NIS atau nomor induk santri.
+- Nama lengkap.
+- Jenis kelamin.
+- Tempat dan tanggal lahir.
+- Alamat.
+- Kelas.
+- Asrama.
+- Tahun masuk.
+- Nama orang tua/wali.
+- Nomor kontak orang tua/wali.
+- Status santri.
+
+Fitur admin:
+
+- Tambah santri.
+- Edit santri.
+- Lihat detail santri.
+- Hapus atau menonaktifkan data sesuai aturan.
+- Pencarian santri.
+- Filter berdasarkan kelas dan asrama.
+- Melihat riwayat aktivitas santri.
+
+Hubungkan data santri dengan akun orang tua/wali yang sesuai.
+
+Pastikan orang tua hanya dapat melihat santri yang memang terhubung dengan akun mereka.
+
+## 10. DATA TAHFIDZ
+
+Buat halaman monitoring perkembangan hafalan Al-Qur'an.
+
+Data yang dicatat:
+
+- Nama santri.
+- Tanggal setoran.
+- Nama surah.
+- Juz.
+- Ayat mulai.
+- Ayat selesai.
+- Jenis setoran, misalnya hafalan baru, murajaah, atau tasmi'.
+- Nilai atau kualitas hafalan.
+- Catatan ustadz/ustadzah.
+- Nama pembimbing.
+
+### Fitur ustadz/ustadzah
+
+- Input setoran tahfidz.
+- Edit data setoran.
+- Melihat riwayat hafalan.
+- Menambahkan catatan perkembangan.
+- Memperbarui nilai atau kualitas hafalan.
+
+### Fitur admin
+
+- Melihat seluruh data tahfidz.
+- Mengelola data tahfidz.
+- Melihat perkembangan setiap santri.
+- Memfilter berdasarkan santri, kelas, tanggal, dan pembimbing.
+- Melihat laporan tahfidz.
+
+### Fitur orang tua/wali
+
+Hanya melihat:
+
+- Riwayat setoran.
+- Surah yang dihafalkan.
+- Juz.
+- Ayat yang disetorkan.
+- Tanggal setoran.
+- Nilai atau kualitas hafalan.
+- Catatan pembimbing.
+- Grafik perkembangan tahfidz.
+
+Buat grafik perkembangan hafalan yang mudah dipahami.
+
+## 11. DATA ABSENSI
+
+Buat halaman monitoring kehadiran santri.
+
+Kategori absensi:
+
+- Hadir.
+- Izin.
+- Sakit.
+- Alpa.
+
+Informasi absensi:
+
+- Nama santri.
+- NIS.
+- Tanggal.
+- Waktu.
+- Kegiatan atau sesi.
+- Status kehadiran.
+- Keterangan.
+- Nama ustadz/ustadzah yang menginput.
+
+### Fitur ustadz/ustadzah
+
+- Menginput absensi santri.
+- Mengubah data absensi sesuai izin.
+- Menginput keterangan.
+- Melihat riwayat kehadiran.
+
+Sediakan form absensi yang memungkinkan ustadz/ustadzah mencatat kehadiran beberapa santri dalam satu sesi secara efisien.
+
+### Fitur admin
+
+- Melihat seluruh data absensi.
+- Mengelola data absensi.
+- Memfilter berdasarkan tanggal, kelas, asrama, dan status.
+- Melihat rekap kehadiran.
+
+### Fitur orang tua/wali
+
+Hanya melihat:
+
+- Riwayat absensi anak.
+- Tanggal kehadiran.
+- Status hadir, izin, sakit, atau alpa.
+- Keterangan absensi.
+- Rekap persentase kehadiran.
+
+Buat grafik kehadiran bulanan.
+
+Pastikan satu santri tidak memiliki catatan absensi ganda pada sesi yang sama.
+
+## 12. DATA PELANGGARAN
+
+Buat halaman pencatatan pelanggaran dan kedisiplinan santri.
+
+Informasi:
+
+- Nama santri.
+- Tanggal kejadian.
+- Waktu kejadian jika tersedia.
+- Jenis pelanggaran.
+- Kategori pelanggaran.
+- Tingkat pelanggaran.
+- Deskripsi kejadian.
+- Tindakan pembinaan.
+- Catatan tambahan.
+- Nama ustadz/ustadzah yang mencatat.
+
+Kategori pelanggaran dapat dikelola admin.
+
+Contoh kategori:
+
+- Kedisiplinan.
+- Ketertiban.
+- Kebersihan.
+- Tata tertib asrama.
+- Kegiatan belajar.
+- Peraturan pondok lainnya.
+
+### Fitur ustadz/ustadzah
+
+- Menginput catatan pelanggaran.
+- Mengedit catatan sesuai kewenangan.
+- Menambahkan catatan pembinaan.
+- Melihat riwayat pelanggaran santri.
+
+### Fitur admin
+
+- Melihat seluruh catatan pelanggaran.
+- Mengelola kategori pelanggaran.
+- Mengelola data pelanggaran.
+- Melihat statistik pelanggaran.
+- Membuat laporan kedisiplinan.
+
+### Fitur orang tua/wali
+
+Hanya dapat melihat:
+
+- Tanggal pelanggaran.
+- Jenis pelanggaran.
+- Kategori.
+- Keterangan.
+- Tindakan pembinaan.
+- Catatan ustadz/ustadzah.
+
+Gunakan bahasa yang informatif, sopan, dan berorientasi pada pembinaan. Batasi akses catatan internal yang memang tidak ditujukan kepada orang tua/wali.
+
+## 13. DOKUMENTASI FOTO KESEHARIAN SANTRI
+
+Buat halaman khusus untuk menampilkan dokumentasi aktivitas santri di pondok pesantren.
+
+Fitur ini penting agar orang tua/wali dapat melihat gambaran kegiatan anak selama berada di lingkungan pondok.
+
+### Kategori dokumentasi
+
+- Kegiatan belajar.
+- Kegiatan tahfidz.
+- Kegiatan ibadah.
+- Kegiatan olahraga.
+- Kegiatan kebersihan.
+- Kegiatan ekstrakurikuler.
+- Kegiatan asrama.
+- Kegiatan pondok lainnya.
+
+### Informasi foto
+
+- Foto kegiatan.
+- Judul kegiatan.
+- Deskripsi.
+- Tanggal kegiatan.
+- Kategori.
+- Kelas atau kelompok santri jika relevan.
+- Nama pengunggah.
+
+### Fitur ustadz/ustadzah
+
+- Mengunggah foto.
+- Menambahkan judul dan deskripsi.
+- Memilih kategori kegiatan.
+- Mengedit dokumentasi.
+- Menghapus dokumentasi sesuai kewenangan.
+
+### Fitur admin
+
+- Melihat seluruh dokumentasi.
+- Mengelola dokumentasi.
+- Menghapus atau menyembunyikan foto yang tidak sesuai.
+- Mengatur dokumentasi yang ditampilkan.
+
+### Fitur orang tua/wali
+
+- Melihat foto kegiatan.
+- Melihat tanggal dan deskripsi kegiatan.
+- Melihat galeri kegiatan pondok.
+- Melihat dokumentasi yang berkaitan dengan anak jika tersedia dan diizinkan.
+
+Buat tampilan galeri foto modern dengan layout grid, fitur melihat gambar lebih besar, dan filter kategori.
+
+Gunakan Supabase Storage untuk penyimpanan gambar.
+
+Perhatikan privasi santri: hanya unggah foto yang telah mendapatkan izin publikasi sesuai kebijakan pondok. Jangan menampilkan foto atau informasi santri kepada pengguna yang tidak berhak.
+
+## 14. MENU PENGUMUMAN
+
+Buat fitur pengumuman untuk menyampaikan informasi resmi pondok pesantren.
+
+Informasi pengumuman:
+
+- Judul.
+- Isi pengumuman.
+- Tanggal publikasi.
+- Kategori.
+- Lampiran jika diperlukan.
+- Target penerima.
+- Status publikasi.
+- Nama pembuat.
+
+Kategori pengumuman:
+
+- Informasi pondok.
+- Jadwal kegiatan.
+- Informasi tahfidz.
+- Informasi asrama.
+- Kegiatan khusus.
+- Informasi wali santri.
+
+### Fitur admin
+
+- Membuat pengumuman.
+- Mengedit pengumuman.
+- Menghapus pengumuman.
+- Menentukan target penerima.
+- Mengatur tanggal publikasi.
+- Mengatur status publikasi.
+
+### Fitur ustadz/ustadzah
+
+Dapat membuat atau memperbarui pengumuman jika admin memberikan izin.
+
+### Fitur orang tua/wali
+
+Hanya dapat melihat pengumuman yang ditujukan kepada mereka.
+
+Tampilkan pengumuman terbaru pada dashboard dan sediakan halaman khusus pengumuman.
+
+## 15. MENU EKSTRAKURIKULER
+
+Buat halaman pengelolaan kegiatan ekstrakurikuler santri.
+
+Contoh ekstrakurikuler:
+
+- Pramuka.
+- Pencak Silat.
+- Kaligrafi.
+- Muhadharah.
+- Hadrah.
+- Bahasa Arab.
+- Bahasa Inggris.
+- Olahraga.
+- Kegiatan seni.
+
+Informasi:
+
+- Nama ekstrakurikuler.
+- Deskripsi.
+- Jadwal.
+- Lokasi.
+- Pembimbing.
+- Daftar santri yang mengikuti.
+- Dokumentasi kegiatan.
+- Status kegiatan.
+
+### Fitur admin
+
+- Menambah ekstrakurikuler.
+- Mengedit data.
+- Menghapus atau menonaktifkan kegiatan.
+- Mengelola daftar peserta.
+- Mengatur pembimbing.
+
+### Fitur ustadz/ustadzah
+
+- Melihat kegiatan yang menjadi tanggung jawabnya.
+- Memperbarui catatan aktivitas jika diberikan izin.
+- Menginput kehadiran kegiatan jika diberikan izin.
+
+### Fitur orang tua/wali
+
+Hanya dapat melihat:
+
+- Ekstrakurikuler yang diikuti anak.
+- Jadwal.
+- Pembimbing.
+- Riwayat kegiatan.
+- Catatan perkembangan.
+- Dokumentasi kegiatan.
+
+## 16. CATATAN PEMBINAAN SANTRI
+
+Tambahkan fitur catatan pembinaan untuk mendokumentasikan arahan dan perkembangan kedisiplinan santri.
+
+Data:
+
+- Nama santri.
+- Tanggal pembinaan.
+- Jenis pembinaan.
+- Catatan pembimbing.
+- Tindak lanjut.
+- Nama ustadz/ustadzah.
+
+Ustadz/ustadzah dapat menginput dan memperbarui catatan sesuai izin.
+
+Admin dapat melihat dan mengelola catatan.
+
+Orang tua/wali hanya dapat melihat catatan yang memang ditujukan untuk mereka. Catatan internal pondok harus tetap terlindungi.
+
+## 17. LAPORAN DAN REKAPITULASI
+
+Buat menu laporan untuk admin.
+
+Jenis laporan:
+
+1. Laporan data santri.
+2. Laporan tahfidz.
+3. Laporan absensi.
+4. Laporan pelanggaran.
+5. Laporan kegiatan harian.
+6. Laporan dokumentasi.
+7. Laporan ekstrakurikuler.
+
+Sediakan:
+
+- Filter berdasarkan tanggal.
+- Filter berdasarkan nama santri.
+- Filter berdasarkan kelas.
+- Filter berdasarkan asrama.
+- Filter berdasarkan kategori.
+- Ringkasan statistik.
+- Ekspor CSV.
+- Tampilan siap cetak.
+
+Orang tua/wali dapat melihat ringkasan perkembangan anaknya sendiri, tetapi tidak dapat mengakses laporan seluruh santri.
+
+## 18. PENGATURAN PROFIL
+
+Sediakan menu pengaturan profil secara opsional.
+
+### Admin
+
+Dapat mengelola profil akun dan informasi sistem yang diizinkan.
+
+### Ustadz/ustadzah
+
+Dapat melihat dan memperbarui informasi profil pribadi yang diperbolehkan.
+
+### Orang tua/wali
+
+Dapat melihat dan jika diizinkan memperbarui informasi akun pribadi seperti:
+
+- Nama.
+- Nomor telepon.
+- Foto profil.
+- Password melalui mekanisme autentikasi yang aman.
+
+Orang tua/wali tidak boleh mengubah data akademik, absensi, tahfidz, pelanggaran, atau informasi resmi santri.
+
+## 19. STRUKTUR DATABASE
+
+Gunakan Supabase PostgreSQL dengan struktur relasional yang rapi.
+
+Buat tabel berikut:
+
+### `profiles`
+
+- id.
+- full_name.
+- email.
+- phone.
+- avatar_url.
+- role.
+- created_at.
+- updated_at.
+
+Role hanya terdiri dari:
+
+- admin.
+- ustadz.
+- user.
+
+### `students`
+
+- id.
+- nis.
+- full_name.
+- gender.
+- birth_place.
+- birth_date.
+- address.
+- photo_url.
+- class_id.
+- dormitory.
+- enrollment_year.
+- status.
+- created_at.
+- updated_at.
+
+### `parent_students`
+
+- id.
+- parent_id.
+- student_id.
+- relationship.
+- created_at.
+
+Tabel ini menghubungkan akun orang tua/wali dengan santri. Pastikan orang tua hanya dapat melihat anak yang terhubung dengan akunnya.
+
+### `classes`
+
+- id.
+- name.
+- description.
+- created_at.
+
+### `tahfidz_records`
+
+- id.
+- student_id.
+- ustadz_id.
+- date.
+- surah.
+- juz.
+- start_ayah.
+- end_ayah.
+- type.
+- score.
+- notes.
+- created_at.
+- updated_at.
+
+### `attendance_records`
+
+- id.
+- student_id.
+- ustadz_id.
+- date.
+- session.
+- status.
+- notes.
+- created_at.
+- updated_at.
+
+Tambahkan aturan agar absensi tidak tercatat ganda untuk santri dan sesi yang sama.
+
+### `violation_records`
+
+- id.
+- student_id.
+- ustadz_id.
+- violation_category_id.
+- date.
+- description.
+- severity.
+- coaching_action.
+- notes.
+- created_at.
+- updated_at.
+
+### `violation_categories`
+
+- id.
+- name.
+- description.
+- created_at.
+
+### `activity_photos`
+
+- id.
+- title.
+- description.
+- image_url.
+- category.
+- activity_date.
+- uploaded_by.
+- visibility.
+- created_at.
+
+### `announcements`
+
+- id.
+- title.
+- content.
+- category.
+- attachment_url.
+- target_audience.
+- published_at.
+- status.
+- created_by.
+- created_at.
+- updated_at.
+
+### `extracurriculars`
+
+- id.
+- name.
+- description.
+- schedule.
+- location.
+- supervisor_id.
+- status.
+- created_at.
+- updated_at.
+
+### `extracurricular_members`
+
+- id.
+- extracurricular_id.
+- student_id.
+- joined_at.
+- status.
+
+### `coaching_records`
+
+- id.
+- student_id.
+- ustadz_id.
+- date.
+- coaching_type.
+- notes.
+- follow_up.
+- parent_visible.
+- created_at.
+- updated_at.
+
+Tambahkan tabel atau relasi lain jika dibutuhkan, seperti tabel audit log dan pengaturan sistem.
+
+Gunakan UUID, foreign key, unique constraint, indeks, dan aturan penghapusan yang tepat.
+
+## 20. KEAMANAN DAN HAK AKSES DATABASE
+
+Terapkan Row Level Security (RLS) di Supabase.
+
+Aturan wajib:
+
+- Admin memiliki akses pengelolaan sesuai kebijakan sistem.
+- Ustadz/ustadzah hanya dapat menginput atau mengubah data sesuai tanggung jawab dan izin.
+- Orang tua/wali hanya dapat membaca data santri yang terhubung dengan akun mereka.
+- Orang tua/wali tidak dapat melakukan INSERT, UPDATE, atau DELETE pada data monitoring.
+- Orang tua/wali tidak dapat melihat data santri lain.
+- Role tidak boleh diubah sendiri oleh pengguna.
+- Pengguna tidak dapat mengakses halaman role lain dengan mengganti URL.
+- Foto dan dokumen menggunakan aturan akses storage yang sesuai.
+- Perubahan data penting dicatat jika diperlukan untuk audit.
+
+Validasi hak akses harus dilakukan di database/backend, bukan hanya frontend.
+
+Jangan menaruh Supabase service role key atau secret key di kode frontend.
+
+## 21. NOTIFIKASI DAN STATUS
+
+Buat notifikasi yang informatif untuk:
+
+- Data berhasil disimpan.
+- Data berhasil diperbarui.
+- Data berhasil dihapus.
+- Data gagal disimpan.
+- Absensi berhasil dicatat.
+- Setoran tahfidz berhasil ditambahkan.
+- Dokumentasi berhasil diunggah.
+- Pengumuman baru diterbitkan.
+
+Buat badge status yang mudah dipahami untuk absensi, tahfidz, dan pelanggaran.
+
+## 22. DATA DEMO
+
+Buat data contoh untuk mendemonstrasikan sistem, meliputi:
+
+- Beberapa data santri.
+- Beberapa akun ustadz/ustadzah.
+- Beberapa akun orang tua/wali.
+- Data kelas dan asrama.
+- Data tahfidz.
+- Data absensi.
+- Data pelanggaran.
+- Dokumentasi foto contoh yang aman digunakan.
+- Pengumuman.
+- Kegiatan ekstrakurikuler.
+
+Data demo harus ditandai sebagai data contoh. Jangan menganggap data contoh sebagai informasi santri yang nyata.
+
+Pastikan data antar tabel memiliki hubungan yang benar sehingga dashboard, grafik, dan laporan menampilkan informasi yang konsisten.
+
+## 23. DEPLOYMENT KE VERCEL
+
+Siapkan website agar dapat di-deploy ke Vercel.
+
+Persiapkan:
+
+- Source code lengkap.
+- File package.json.
+- File konfigurasi build.
+- File .gitignore.
+- File .env.example.
+- README.md.
+- Konfigurasi routing.
+- SQL migration Supabase.
+- Seed data.
+- Konfigurasi Supabase Storage dan RLS.
+
+Environment variables yang diperlukan, misalnya:
+
+- VITE_SUPABASE_URL.
+- VITE_SUPABASE_ANON_KEY.
+
+Sesuaikan nama variabel dengan framework yang digunakan.
+
+Jangan menyimpan service role key atau secret key pada frontend.
+
+Langkah deployment:
+
+1. Upload source code ke GitHub.
+2. Login ke Vercel.
+3. Impor repository proyek.
+4. Konfigurasikan framework dan build settings.
+5. Tambahkan environment variables.
+6. Klik Deploy.
+7. Periksa hasil build.
+8. Konfigurasikan URL autentikasi dan redirect Supabase.
+9. Uji seluruh fitur melalui domain Vercel.
+10. Pastikan database, autentikasi, upload gambar, dan seluruh dashboard berfungsi di lingkungan produksi.
+
+Jika AI builder tidak dapat melakukan deployment langsung, berikan panduan yang jelas untuk melakukannya secara manual.
+
+## 24. PENGUJIAN SISTEM
+
+Lakukan pengujian terhadap seluruh fitur.
+
+### Pengujian admin
+
+- Login admin.
+- Mengelola akun.
+- Menambah dan mengedit data santri.
+- Melihat seluruh data.
+- Mengelola data tahfidz.
+- Mengelola absensi.
+- Mengelola pelanggaran.
+- Mengelola foto.
+- Mengelola pengumuman.
+- Mengelola ekstrakurikuler.
+- Melihat laporan.
+
+### Pengujian ustadz/ustadzah
+
+- Login ustadz/ustadzah.
+- Melihat daftar santri sesuai tanggung jawab.
+- Menginput tahfidz.
+- Menginput absensi.
+- Menginput pelanggaran.
+- Menginput catatan pembinaan.
+- Mengunggah dokumentasi foto.
+- Mengelola fitur lain sesuai izin.
+
+### Pengujian orang tua/wali
+
+- Login user.
+- Melihat profil anak.
+- Melihat data tahfidz.
+- Melihat absensi.
+- Melihat pelanggaran.
+- Melihat dokumentasi.
+- Melihat pengumuman.
+- Melihat ekstrakurikuler.
+- Tidak dapat menginput data.
+- Tidak dapat mengedit data monitoring.
+- Tidak dapat menghapus data.
+- Tidak dapat melihat data anak milik akun lain.
+
+### Pengujian keamanan
+
+- Uji akses halaman menggunakan URL langsung.
+- Uji pembatasan role.
+- Uji RLS.
+- Uji akses database.
+- Uji akses foto.
+- Uji perlindungan data pribadi.
+
+## 25. HASIL AKHIR YANG DIHARAPKAN
+
+Saya ingin mendapatkan aplikasi web yang:
+
+1. Memiliki desain modern dan profesional.
+2. Memiliki tiga role: Admin, Ustadz/Ustadzah, dan User Orang Tua/Wali.
+3. Memiliki login dan dashboard masing-masing role.
+4. Memiliki manajemen data santri.
+5. Memiliki monitoring tahfidz.
+6. Memiliki monitoring absensi.
+7. Memiliki monitoring pelanggaran.
+8. Memiliki dokumentasi foto keseharian santri.
+9. Memiliki menu pengumuman.
+10. Memiliki menu ekstrakurikuler.
+11. Memiliki catatan pembinaan.
+12. Memiliki laporan perkembangan santri.
+13. Memiliki pengaturan profil opsional.
+14. Menggunakan database online yang benar-benar berfungsi.
+15. Memiliki pembatasan hak akses yang aman.
+16. Responsif untuk desktop dan smartphone.
+17. Memiliki dokumentasi proyek.
+18. Siap di-deploy ke Vercel.
+
+## 26. INSTRUKSI PENTING UNTUK AI WEBSITE BUILDER
+
+Jangan hanya membuat desain halaman depan. Bangun seluruh halaman, database, autentikasi, relasi data, dan fitur sesuai spesifikasi.
+
+Pastikan semua tombol, menu, form, filter, grafik, upload foto, dan tabel benar-benar berfungsi.
+
+Prioritaskan tiga hal:
+
+**Pertama: Tampilan profesional.** Website harus memiliki desain yang menarik, rapi, dan nyaman digunakan.
+
+**Kedua: Fungsionalitas.** Seluruh data harus terhubung dengan database dan dapat diperbarui oleh role yang berwenang.
+
+**Ketiga: Keamanan.** Orang tua/wali hanya dapat melihat informasi anaknya, sedangkan ustadz/ustadzah dapat menginput data sesuai izin dan admin dapat mengelola sistem.
+
+Kerjakan proyek secara bertahap, lakukan pengujian, perbaiki error, dan pastikan aplikasi siap digunakan serta di-deploy ke Vercel.
+
+Jangan mengklaim fitur sudah selesai jika masih berupa tampilan statis atau belum terhubung ke database.
